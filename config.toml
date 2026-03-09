@@ -1,0 +1,84 @@
+[general]
+# hide_overlay_in_screen_share = true
+# center_cursor_position = true
+
+[hotkeys]
+# "Option+Escape" = "recursive_grid"
+"Option+Space" = "action move_mouse --center"
+"Option+Return" = "action left_click"
+"Option+Escape" = "recursive_grid --action left_click"
+"Option+Tab" = "scroll"
+"Cmd+Escape" = "recursive_grid"
+
+# No hints option
+# "" = "hints"
+# "Option+Shift+Escape" = "quadgrid"
+
+[mode_indicator]
+scroll_enabled = true
+recursive_grid_enabled = true
+
+[action.key_bindings]
+left_click = "Return"
+right_click = "Shift+Return"
+middle_click = "Shift+M"
+mouse_down = "Shift+D"
+mouse_up = "Shift+U"
+move_mouse_up = "Up"
+move_mouse_down = "Down"
+move_mouse_left = "Left"
+move_mouse_right = "Right"
+
+[hints]
+enable = false
+font_size = 8
+ignore_clickable_check = true
+
+[grid]
+characters = "asdfvbhjkl;"
+sublayer_keys = "asdfhjkl;"
+prewarm_enabled = true
+
+[recursive_grid]
+reset_key = ","
+
+# grid_cols = 3
+# grid_rows = 3
+# keys = "aksh ldjf"
+
+grid_cols = 5
+grid_rows = 5
+keys = "qwertasdfgcv nmyuiophjkl;"
+
+min_size = 10
+max_depth = 10
+
+[recursive_grid.ui]
+# If you want colored
+#
+# line_color_light = "#FFFF0000"
+# text_color_light = "#FFFF0000"
+# highlight_color_light = "#22FFFFFF"
+#
+# line_color_dark = "#FFFF0000"
+# text_color_dark = "#FFFF0000"
+# highlight_color_dark = "#22FFFFFF"
+
+label_font_size = 8
+
+# I don't need grid anymore
+line_color_light = "#00000000"
+text_color_light = "#00000000"
+highlight_color_light = "#00000000"
+
+line_color_dark = "#00000000"
+text_color_dark = "#00000000"
+highlight_color_dark = "#00000000"
+
+[smooth_cursor]
+move_mouse_enabled = true
+steps = 10
+delay = 1
+
+[systray]
+enabled = false
