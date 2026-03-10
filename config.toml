@@ -1,18 +1,13 @@
 [general]
-# hide_overlay_in_screen_share = true
-# center_cursor_position = true
+hide_overlay_in_screen_share = true
 
 [hotkeys]
-# "Option+Escape" = "recursive_grid"
-"Option+Space" = "action move_mouse --center"
-"Option+Return" = "action left_click"
 "Option+Escape" = "recursive_grid --action left_click"
-"Option+Tab" = "scroll"
 "Cmd+Escape" = "recursive_grid"
+"Option+Tab" = "scroll"
 
-# No hints option
-# "" = "hints"
-# "Option+Shift+Escape" = "quadgrid"
+"Option+Return" = "action left_click"
+"Option+Space" = "action move_mouse --center"
 
 [mode_indicator]
 scroll_enabled = true
@@ -28,16 +23,6 @@ move_mouse_up = "Up"
 move_mouse_down = "Down"
 move_mouse_left = "Left"
 move_mouse_right = "Right"
-
-[hints]
-enable = false
-font_size = 8
-ignore_clickable_check = true
-
-[grid]
-characters = "asdfvbhjkl;"
-sublayer_keys = "asdfhjkl;"
-prewarm_enabled = true
 
 [recursive_grid]
 reset_key = ","
@@ -67,6 +52,7 @@ max_depth = 10
 label_font_size = 8
 
 # I don't need grid anymore
+
 line_color_light = "#00000000"
 text_color_light = "#00000000"
 highlight_color_light = "#00000000"
