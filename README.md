@@ -23,8 +23,11 @@ Escape" which is 2 more keys (40% difference in my case).
 After all I use it like Vimium, but for the entire OS and clicks are consistent
 with element position on screen. So it's much better for me.
 
+## Path
+
+Vimium -> Shortcat -> Homerow -> Mouseless -> Neru (hints) -> Neru (grid) -> Neru (recursive_grid)
+
 ## Showcase
 
-Later I am going to attach a short video there, so you can check how I usually
-use this program.
+https://github.com/user-attachments/assets/11b5b19e-0b14-4fb4-923f-0326f5373631
 
