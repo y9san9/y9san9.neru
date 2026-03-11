@@ -9,9 +9,28 @@ hide_overlay_in_screen_share = true
 "Option+Return" = "action left_click"
 "Option+Space" = "action move_mouse --center"
 
-[mode_indicator]
-scroll_enabled = true
-recursive_grid_enabled = true
+[mode_indicator.ui]
+font_size = 4
+border_radius = 50
+border_color_light = "#00000000"
+border_color_dark = "#00000000"
+border_width = 0
+padding_x = -1
+padding_y = -1
+indicator_x_offset = 10
+indicator_y_offset = -20
+
+[mode_indicator.scroll]
+enabled = true
+text = " "
+background_color_light = "#FF00CF55"
+background_color_dark = "#FF00CF55"
+
+[mode_indicator.recursive_grid]
+enabled = true
+text = " "
+background_color_light = "#FFFFCF55"
+background_color_dark = "#FFFFCF55"
 
 [action.key_bindings]
 left_click = "Return"
@@ -39,27 +58,32 @@ min_size = 10
 max_depth = 10
 
 [recursive_grid.ui]
-# If you want colored
-#
-# line_color_light = "#FFFF0000"
-# text_color_light = "#FFFF0000"
-# highlight_color_light = "#22FFFFFF"
-#
-# line_color_dark = "#FFFF0000"
-# text_color_dark = "#FFFF0000"
-# highlight_color_dark = "#22FFFFFF"
-
 label_font_size = 8
 
-# I don't need grid anymore
+# For colored grid
 
-line_color_light = "#00000000"
+line_color_light = "#FFFF0000"
 text_color_light = "#00000000"
-highlight_color_light = "#00000000"
+highlight_color_light = "#22FFFFFF"
 
-line_color_dark = "#00000000"
+line_color_dark = "#FFFF0000"
 text_color_dark = "#00000000"
-highlight_color_dark = "#00000000"
+highlight_color_dark = "#22FFFFFF"
+
+sub_key_preview = true
+sub_key_preview_font_size = 6
+sub_key_preview_text_color_light = "#FFFF0000"
+sub_key_preview_text_color_dark = "#FFFF0000"
+
+# For transparent grid
+
+# line_color_light = "#00000000"
+# text_color_light = "#00000000"
+# highlight_color_light = "#00000000"
+#
+# line_color_dark = "#00000000"
+# text_color_dark = "#00000000"
+# highlight_color_dark = "#00000000"
 
 [smooth_cursor]
 move_mouse_enabled = true
