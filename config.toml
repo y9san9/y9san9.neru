@@ -1,5 +1,6 @@
 [general]
 hide_overlay_in_screen_share = true
+passthrough_unbounded_keys = true
 
 [hotkeys]
 "Option+Escape" = "recursive_grid --action left_click"
@@ -29,8 +30,15 @@ background_color_dark = "#FF00CF55"
 [mode_indicator.recursive_grid]
 enabled = true
 text = " "
-background_color_light = "#FFFFCF55"
-background_color_dark = "#FFFFCF55"
+background_color_light = "#FFFFAA22"
+background_color_dark = "#FFFFAA22"
+
+[sticky_modifiers.ui]
+indicator_y_offset = 20
+indicator_x_offset = 0
+border_width = 0
+background_color_light = "#FFFFAA22"
+background_color_dark = "#FFFFAA22"
 
 [action.key_bindings]
 left_click = "Return"
@@ -42,6 +50,20 @@ move_mouse_up = "Up"
 move_mouse_down = "Down"
 move_mouse_left = "Left"
 move_mouse_right = "Right"
+
+[scroll.key_bindings]
+scroll_up = ["Ctrl+K"]
+scroll_down = ["Ctrl+J"]
+scroll_left = ["Ctrl+H"]
+scroll_right = ["Ctrl+L"]
+page_up = ["Ctrl+U"]
+page_down = ["Ctrl+D"]
+go_top = ["Ctrl+T"]
+go_bottom = ["Ctrl+B"]
+
+[scroll.custom_hotkeys]
+"," = "recursive_grid --action left_click"
+"." = "recursive_grid"
 
 [recursive_grid]
 reset_key = ","
@@ -85,10 +107,21 @@ sub_key_preview_text_color_dark = "#FFFF0000"
 # text_color_dark = "#00000000"
 # highlight_color_dark = "#00000000"
 
+[recursive_grid.custom_hotkeys]
+"Ctrl+J" = "action scroll_down"
+"Ctrl+K" = "action scroll_up"
+"Ctrl+H" = "action scroll_left"
+"Ctrl+L" = "action scroll_right"
+"Ctrl+U" = "action page_up"
+"Ctrl+D" = "action page_down"
+"Ctrl+T" = "action go_top"
+"Ctrl+B" = "action go_bottom"
+
 [smooth_cursor]
 move_mouse_enabled = true
-steps = 10
-delay = 1
+steps = 50
+max_duration = 200
+duration_per_pixel = 0.1
 
 [systray]
 enabled = false
