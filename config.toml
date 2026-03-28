@@ -3,12 +3,15 @@ hide_overlay_in_screen_share = true
 passthrough_unbounded_keys = true
 
 [hotkeys]
-"Option+Escape" = "recursive_grid --action left_click"
-"Cmd+Escape" = "recursive_grid"
+"Option+Escape" = "recursive_grid --cursor-selection-mode hold"
 "Option+Tab" = "scroll"
+"Option+Space" = "action left_click"
+"Option+Cmd+Space" = "action right_click"
 
-"Option+Return" = "action left_click"
-"Option+Space" = "action move_mouse --center"
+"Cmd+Shift+Space" = "__disabled__"
+"Cmd+Shift+G" = "__disabled__"
+"Cmd+Shift+C" = "__disabled__"
+"Cmd+Shift+S" = "__disabled__"
 
 [mode_indicator.ui]
 font_size = 4
@@ -27,12 +30,6 @@ text = " "
 background_color_light = "#FF00CF55"
 background_color_dark = "#FF00CF55"
 
-[mode_indicator.recursive_grid]
-enabled = true
-text = " "
-background_color_light = "#FFFFAA22"
-background_color_dark = "#FFFFAA22"
-
 [sticky_modifiers.ui]
 indicator_y_offset = 20
 indicator_x_offset = 0
@@ -40,74 +37,94 @@ border_width = 0
 background_color_light = "#FFFFAA22"
 background_color_dark = "#FFFFAA22"
 
-[action.key_bindings]
-left_click = "Return"
-right_click = "Shift+Return"
-middle_click = "Shift+M"
-mouse_down = "Shift+D"
-mouse_up = "Shift+U"
-move_mouse_up = "Up"
-move_mouse_down = "Down"
-move_mouse_left = "Left"
-move_mouse_right = "Right"
+[scroll.hotkeys]
+"t" = "action go_top"
+"b" = "action go_bottom"
 
-[scroll.key_bindings]
-scroll_up = ["Ctrl+K"]
-scroll_down = ["Ctrl+J"]
-scroll_left = ["Ctrl+H"]
-scroll_right = ["Ctrl+L"]
-page_up = ["Ctrl+U"]
-page_down = ["Ctrl+D"]
-go_top = ["Ctrl+T"]
-go_bottom = ["Ctrl+B"]
+"," = "action move_mouse --center"
+"." = "recursive_grid --cursor-selection-mode hold"
 
-[scroll.custom_hotkeys]
-"," = "recursive_grid --action left_click"
-"." = "recursive_grid"
+"Space" = ["action left_click", "idle"]
+"Shift+Space" = "action left_click"
+"Cmd+Space" = ["action right_click", "idle"]
+"Cmd+Shift+Space" = "action right_click"
+
+"Shift+M" = "action middle_click"
+"Shift+D" = "action mouse_down"
+"Shift+U" = "action mouse_up"
+
+"Up" = "action move_mouse_relative --dx=0 --dy=-25"
+"Down" = "action move_mouse_relative --dx=0 --dy=25"
+"Left" = "action move_mouse_relative --dx=-25 --dy=0"
+"Right" = "action move_mouse_relative --dx=25 --dy=0"
+
+"Cmd+Up" = "action move_mouse_relative --dx=0 --dy=-150"
+"Cmd+Down" = "action move_mouse_relative --dx=0 --dy=150"
+"Cmd+Left" = "action move_mouse_relative --dx=-150 --dy=0"
+"Cmd+Right" = "action move_mouse_relative --dx=150 --dy=0"
+
+"Shift+Up" = "action move_mouse_relative --dx=0 --dy=-5"
+"Shift+Down" = "action move_mouse_relative --dx=0 --dy=5"
+"Shift+Left" = "action move_mouse_relative --dx=-5 --dy=0"
+"Shift+Right" = "action move_mouse_relative --dx=5 --dy=0"
+
+"Shift+L" = "__disabled__"
+"Shift+R" = "__disabled__"
+"Shift+I" = "__disabled__"
+"gg" = "__disabled__"
+"Shift+G" = "__disabled__"
 
 [recursive_grid]
-reset_key = ","
-
 # grid_cols = 3
 # grid_rows = 3
 # keys = "aksh ldjf"
 
 grid_cols = 5
 grid_rows = 5
-keys = "qwertasdfgcv nmyuiophjkl;"
+keys = "qwertasdfgcvbnmyuiophjkl;"
 
-min_size = 10
+min_size_height = 1
+min_size_width = 1
 max_depth = 10
 
 [recursive_grid.ui]
-label_font_size = 8
-
-# For colored grid
-
-line_color_light = "#FFFF0000"
+line_color_light = "#44000000"
 text_color_light = "#00000000"
 highlight_color_light = "#22FFFFFF"
 
-line_color_dark = "#FFFF0000"
+line_color_dark = "#44000000"
 text_color_dark = "#00000000"
 highlight_color_dark = "#22FFFFFF"
 
-sub_key_preview = true
-sub_key_preview_font_size = 6
-sub_key_preview_text_color_light = "#FFFF0000"
-sub_key_preview_text_color_dark = "#FFFF0000"
+[recursive_grid.hotkeys]
+"Up" = "action move_mouse_relative --dx=0 --dy=-25"
+"Down" = "action move_mouse_relative --dx=0 --dy=25"
+"Left" = "action move_mouse_relative --dx=-25 --dy=0"
+"Right" = "action move_mouse_relative --dx=25 --dy=0"
 
-# For transparent grid
+"Cmd+Up" = "action move_mouse_relative --dx=0 --dy=-150"
+"Cmd+Down" = "action move_mouse_relative --dx=0 --dy=150"
+"Cmd+Left" = "action move_mouse_relative --dx=-150 --dy=0"
+"Cmd+Right" = "action move_mouse_relative --dx=150 --dy=0"
 
-# line_color_light = "#00000000"
-# text_color_light = "#00000000"
-# highlight_color_light = "#00000000"
-#
-# line_color_dark = "#00000000"
-# text_color_dark = "#00000000"
-# highlight_color_dark = "#00000000"
+"Shift+Up" = "action move_mouse_relative --dx=0 --dy=-5"
+"Shift+Down" = "action move_mouse_relative --dx=0 --dy=5"
+"Shift+Left" = "action move_mouse_relative --dx=-5 --dy=0"
+"Shift+Right" = "action move_mouse_relative --dx=5 --dy=0"
 
-[recursive_grid.custom_hotkeys]
+"Space" = ["action left_click", "idle"]
+"Shift+Space" = ["action left_click", "exec sleep 0.05", "action reset"]
+"Cmd+Space" = ["action right_click", "idle"]
+"Cmd+Shift+Space" = ["action right_click", "exec sleep 0.05", "action reset"]
+
+"Shift+M" = "action middle_click"
+"Shift+D" = "action mouse_down"
+"Shift+U" = "action mouse_up"
+
+"`" = "toggle-cursor-follow-selection"
+"," = "action reset"
+"." = ["action move_mouse", "scroll"]
+
 "Ctrl+J" = "action scroll_down"
 "Ctrl+K" = "action scroll_up"
 "Ctrl+H" = "action scroll_left"
@@ -116,12 +133,17 @@ sub_key_preview_text_color_dark = "#FFFF0000"
 "Ctrl+D" = "action page_down"
 "Ctrl+T" = "action go_top"
 "Ctrl+B" = "action go_bottom"
+"Ctrl+M" = "action move_mouse"
+
+"Shift+L" = "__disabled__"
+"Shift+R" = "__disabled__"
+"Shift+I" = "__disabled__"
 
 [smooth_cursor]
 move_mouse_enabled = true
-steps = 50
+steps = 100
 max_duration = 200
-duration_per_pixel = 0.1
+duration_per_pixel = 0.01
 
 [systray]
 enabled = false
