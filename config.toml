@@ -5,19 +5,20 @@ passthrough_unbounded_keys = true
 [hotkeys]
 "Option+Escape" = "recursive_grid --cursor-selection-mode hold"
 "Option+Tab" = "scroll"
-"Option+Space" = "action left_click"
-"Option+Cmd+Space" = "action right_click"
 
 "Cmd+Shift+Space" = "__disabled__"
 "Cmd+Shift+G" = "__disabled__"
 "Cmd+Shift+C" = "__disabled__"
 "Cmd+Shift+S" = "__disabled__"
 
+[virtual_pointer.ui]
+size = 4
+color = "#FFFFAA22"
+
 [mode_indicator.ui]
 font_size = 4
 border_radius = 50
-border_color_light = "#00000000"
-border_color_dark = "#00000000"
+border_color = "#00000000"
 border_width = 0
 padding_x = -1
 padding_y = -1
@@ -27,15 +28,13 @@ indicator_y_offset = -20
 [mode_indicator.scroll]
 enabled = true
 text = " "
-background_color_light = "#FF00CF55"
-background_color_dark = "#FF00CF55"
+background_color = "#FF00CF55"
 
 [sticky_modifiers.ui]
-indicator_y_offset = 20
+indicator_y_offset = -10
 indicator_x_offset = 0
 border_width = 0
-background_color_light = "#FFFFAA22"
-background_color_dark = "#FFFFAA22"
+background_color = "#FFFFAA22"
 
 [scroll.hotkeys]
 "t" = "action go_top"
@@ -88,13 +87,9 @@ min_size_width = 1
 max_depth = 10
 
 [recursive_grid.ui]
-line_color_light = "#44000000"
-text_color_light = "#00000000"
-highlight_color_light = "#22FFFFFF"
-
-line_color_dark = "#44000000"
-text_color_dark = "#00000000"
-highlight_color_dark = "#22FFFFFF"
+line_color = "#44000000"
+text_color = "#00000000"
+highlight_color = "#22FFFFFF"
 
 [recursive_grid.hotkeys]
 "Up" = "action move_mouse_relative --dx=0 --dy=-25"
@@ -113,9 +108,9 @@ highlight_color_dark = "#22FFFFFF"
 "Shift+Right" = "action move_mouse_relative --dx=5 --dy=0"
 
 "Space" = ["action left_click", "idle"]
-"Shift+Space" = ["action left_click", "exec sleep 0.05", "action reset"]
+"Shift+Space" = ["action left_click", "action reset"]
 "Cmd+Space" = ["action right_click", "idle"]
-"Cmd+Shift+Space" = ["action right_click", "exec sleep 0.05", "action reset"]
+"Cmd+Shift+Space" = ["action right_click", "action reset"]
 
 "Shift+M" = "action middle_click"
 "Shift+D" = "action mouse_down"
@@ -140,10 +135,7 @@ highlight_color_dark = "#22FFFFFF"
 "Shift+I" = "__disabled__"
 
 [smooth_cursor]
-move_mouse_enabled = true
-steps = 100
-max_duration = 200
-duration_per_pixel = 0.01
+move_mouse_enabled = false
 
 [systray]
 enabled = false
