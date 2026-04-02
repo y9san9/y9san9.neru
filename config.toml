@@ -1,5 +1,4 @@
 [general]
-hide_overlay_in_screen_share = true
 passthrough_unbounded_keys = true
 
 [hotkeys]
@@ -35,6 +34,7 @@ indicator_y_offset = -10
 indicator_x_offset = 0
 border_width = 0
 background_color = "#FFFFAA22"
+text_color = "#000000"
 
 [scroll.hotkeys]
 "t" = "action go_top"
@@ -74,10 +74,6 @@ background_color = "#FFFFAA22"
 "Shift+G" = "__disabled__"
 
 [recursive_grid]
-# grid_cols = 3
-# grid_rows = 3
-# keys = "aksh ldjf"
-
 grid_cols = 5
 grid_rows = 5
 keys = "qwertasdfgcvbnmyuiophjkl;"
@@ -89,7 +85,11 @@ max_depth = 10
 [recursive_grid.ui]
 line_color = "#44000000"
 text_color = "#00000000"
-highlight_color = "#22FFFFFF"
+highlight_color = "#11FFFFFF"
+
+[recursive_grid.animation]
+enabled = true
+duration_ms = 50
 
 [recursive_grid.hotkeys]
 "Up" = "action move_mouse_relative --dx=0 --dy=-25"
@@ -133,9 +133,6 @@ highlight_color = "#22FFFFFF"
 "Shift+L" = "__disabled__"
 "Shift+R" = "__disabled__"
 "Shift+I" = "__disabled__"
-
-[smooth_cursor]
-move_mouse_enabled = false
 
 [systray]
 enabled = false
